@@ -1,0 +1,39 @@
+<h1 class="text-center mt-5 mb-3">-Assignment on Ng Switch</h1>
+<div class="container mb-5 pb-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <label>Maths</label>
+            <input type="text" class="form-control" [(ngModel)]="math" name="math">
+            <p>{{math}}</p>
+        </div>
+        <div class="col-lg-4">
+            <label>Physics</label>
+            <input type="text" class="form-control" [(ngModel)]="physics" name="physics">
+            <p>{{physics}}</p>
+        </div>
+        <div class="col-lg-4">
+            <label>Chemistry</label>
+            <input type="text" class="form-control" [(ngModel)]="chemestry" name="chemestry" >
+            <p>{{chemestry}}</p>
+        </div>
+        <div class="mt-2 mb-2">
+            <button (click)="calculatePer()" class="btn btn-success">Calculate Marks</button>
+        </div>
+    </div>
+    <h1>Percentage-{{percentage | number:'2.2-2'}}%</h1>
+
+    <h1 [ngSwitch]="true">Result -
+        <span *ngSwitchCase="percentage >= 70">DISTINCTION</span>
+        <span *ngSwitchCase="percentage >= 60 && percentage <= 69">FIRST CLASS</span>
+        <span *ngSwitchCase="percentage >= 40 && percentage <= 59">PASS</span>
+        <span *ngSwitchCase="percentage <= 40">YOU ARE FAIL</span>
+        <span *ngSwitchDefault>Default</span>
+    </h1>
+</div>
+
+
+
+
+
+
+<!-- Assignment Complete -->

@@ -1,0 +1,97 @@
+
+<hr>
+<h1 class="text-center"> -Assignment on Reactive Form Validation</h1>
+<div class="container p-5">
+  <h1 class="text-center">Registration  Form</h1>
+  <div class="row justify-content-center ">
+    <div class="col-lg-6">
+          <form [formGroup]="regForm" (submit)="sumitRegForm()">
+            <!-- Name -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" placeholder="Name" formControlName="name" required>
+              <label for="floatingInput">Name</label>
+            </div>
+            <div *ngIf="name.touched && age.invalid" class="text-danger">
+              <div *ngIf="name.errors?.['required']">Name is required</div>
+              <div *ngIf="name.errors?.['pattern']">Name should contain only alphabets</div>
+           </div>
+           <!-- Email -->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingPassword" placeholder="email" formControlName="email">
+              <label for="floatingPassword">Email</label>
+            </div>
+            <div *ngIf="email.touched && age.invalid" class="text-danger">
+              <div *ngIf="email.errors?.['required']">Email is required</div>
+              <div *ngIf="email.errors?.['email']">Email is not valid</div>
+           </div>
+           <!-- Contact  -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Mobile No" formControlName="mobile">
+              <label for="floatingPassword">Contact Number</label>
+            </div>
+            <div *ngIf="mobile.touched && age.invalid" class="text-danger">
+              <div *ngIf="mobile.errors?.['required']">Mobile Number is required</div>
+              <div *ngIf="mobile.errors?.['pattern']">Mobile must contain 10 digits is required</div>
+           </div>
+           <!-- Age -->
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="floatingPassword" placeholder="age" formControlName="age">
+              <label for="floatingPassword">Age</label>
+            </div>
+            <div *ngIf="age.touched && age.invalid" class="text-danger">
+              <div *ngIf="age.errors?.['required']">Age is required</div>
+              <div *ngIf="age.errors?.['min']">Age should be greater that 16</div>
+              <div *ngIf="age.errors?.['max']">Age should be less that 56</div>
+          </div>
+          <!-- Username -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Set Username" formControlName="username">
+              <label for="floatingPassword">Set Username</label>
+            </div>
+            <div *ngIf="username.touched && age.invalid" class="text-danger">
+              <div *ngIf="username.errors?.['required']">Username is required</div>
+              <div *ngIf="username.errors?.['pattern']">Username must have 3 to 15 carecter</div>
+           </div>
+           <!-- Password -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Set Password" formControlName="setpass">
+              <label for="floatingPassword">Set Password</label>
+            </div>
+            <div *ngIf="pass.touched && pass.invalid" class="text-danger">
+              <div *ngIf="pass.errors?.['required']">Password is required</div>
+              <div *ngIf="pass.errors?.['minlength']">password should be greater that 6</div>
+              <div *ngIf="pass.errors?.['maxlength']">Age should be less that 12</div>
+              <div *ngIf="pass.errors?.['pattern']">Password sholud contain atlease one
+                <ul>
+                    <li>Capital letter</li>
+                    <li>Small letter</li>
+                    <li>Number</li>
+                    <li>Special charecter</li>
+                </ul>
+             </div>
+           </div>
+           <!-- Confirm Password -->
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Confirm Password" formControlName="confirmpass" [style.border]="(conpass.touched && !regForm.errors?.['mismatch'])?'2px solid green':'2px solid red'">
+              <label for="floatingPassword">Confirm Password</label>
+            </div>
+             <div *ngIf="conpass.touched && conpass.invalid" class="text-danger">
+              <div *ngIf="conpass.errors?.['required']">Password is required</div>
+              <div *ngIf="conpass.errors?.['minlength']">password should be greater that 6</div>
+              <div *ngIf="conpass.errors?.['maxlength']">Age should be less that 12</div>
+            </div>
+            <div *ngIf="regForm.invalid" class="text-danger">
+              <div *ngIf="conpass.touched && regForm.errors?.['mismatch']">
+                  <b>Confirm Password and Password should match</b>
+              </div>
+          </div>
+          <!--  -->
+            <div>
+              <button type="submit" [disabled]="regForm.invalid" class="btn btn-success ">Submit</button>
+              <button type="reset" class="btn btn-danger mx-3">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  

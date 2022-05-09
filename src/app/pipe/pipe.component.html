@@ -1,0 +1,31 @@
+<div class="container mb-5">
+    <h1 class="text-center mt-5 pb-5"> -Assignment Order By Pipe</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th (click)="sortData('tId')">Train Id</th>
+            <th (click)="sortData('tType')">Train Type</th>
+            <th (click)="sortData('tRoute')">Train Routee</th>
+            <th (click)="sortData('constructDate')">Date</th>
+            <th (click)="sortData('tTicket')">Train Ticker</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let train of MytrainArray |orderBy : colNames:isDecentOrder">
+            <td>{{train.tId}}</td>
+            <td>{{train.tType}}</td>
+            <td>{{train.tRoute}}</td>
+            <td>{{train.constructDate | date :'mediumDate'}}</td>
+            <td>{{train.tTicket}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<!--  -->
+<hr>
+<input type="number"[(ngModel)]="index">
+<h1>{{myName |char :index}}</h1>
+
+<hr>
+<h1>{{'india-is-my-country'|newPipe:'-'}}</h1>

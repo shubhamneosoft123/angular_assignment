@@ -1,0 +1,16 @@
+.container{
+    font-family: 'Open Sans', sans-serif;
+    background: #f9faff;
+    color: #3a3c47;
+}
+form{
+    padding: 40px;
+    background-color: #d0daf4;
+    border-radius: 20px;
+}
+input{
+    background: #f9faff;
+}
+.login-wrapper{
+    height: 80vh;
+}

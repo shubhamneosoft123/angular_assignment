@@ -1,0 +1,32 @@
+
+
+
+
+
+<h1>-Assignment on *ngFor and *ngIf</h1>
+<h3>salaries=[{{salaries}}]</h3>
+  <p>Q.1-Display only salaries from odd index</p>
+  <ul *ngFor="let s of salaries;let i=index">          <!-- let o=odd -->
+    <li *ngIf="i%2!==0">{{s}}</li>
+  </ul>
+<br>
+
+<p>Q.2-Display only salaries from Even index</p>
+<ul *ngFor="let s of salaries;let i=index">             <!-- let e=even -->
+  <li *ngIf="i%2==0">{{s}}</li>
+</ul>
+<br>
+
+<p>Q.3. Display only first salary</p>
+<ul *ngFor="let s of salaries;let f=first">
+  <li *ngIf="f">{{s}}</li>
+</ul>
+<br>
+
+<p>Q.3. Display only Last salary</p>
+<ul *ngFor="let s of salaries;let l=last">
+  <li *ngIf="l">{{s}}</li>
+</ul>
+<br>
+<hr>
+<!-- Assignment end -->

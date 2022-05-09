@@ -1,0 +1,15 @@
+
+ footer {
+    background: #121213;
+    color: #868c96;
+    /* position:fixed;
+    width: 100%;
+    bottom: 0; */
+}
+
+footer p {
+    padding: 40px 0;
+    text-align: center;
+    margin: 0;
+}
+

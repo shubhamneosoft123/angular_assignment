@@ -1,0 +1,10 @@
+{
+  "products": [
+    {
+      "pname": "shirtd",
+      "disc": "red",
+      "price": "333",
+      "id": 1
+    }
+  ]
+}

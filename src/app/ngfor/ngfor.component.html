@@ -1,0 +1,27 @@
+<h1> -Assignment on *ngFor</h1>
+<table class="table">
+  <thead>
+    <tr>
+    <th>Index</th>
+    <th>Book id</th>
+    <th>Book Name</th>
+    <th>Price</th>
+    <th>Even</th>
+    <th>Odd</th>
+    <th>First</th>
+    <th>Last</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of bookArray;let i=index;let e=even;let o=odd;let f=first;let l=last">
+      <td>{{i}}</td>
+      <td>{{b.bid}}</td>
+      <td>{{b.bname }}</td>
+      <td>{{b.bprice}}</td>
+      <td>{{e}}</td>
+      <td>{{o}}</td>
+      <td>{{f}}</td>
+      <td>{{l}}</td>
+    </tr>
+  </tbody>
+</table>

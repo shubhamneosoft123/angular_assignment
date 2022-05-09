@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import swal from 'sweetalert';
 
 @Component({
   selector: 'app-products-add',
@@ -29,7 +28,6 @@ export class ProductsAddComponent implements OnInit {
       console.log(res);
       this.router.navigate(['products'])
     })
-    swal('Addedd!', 'Product has been Added Successfully!', 'success');
   }
 
 }

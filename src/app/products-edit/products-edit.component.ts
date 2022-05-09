@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import swal from 'sweetalert';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -36,7 +35,6 @@ export class ProductsEditComponent implements OnInit {
   updateForm(){
     this.apiService.updateProducts(this.activatedRoute.snapshot.params['id'],this.productEditForm.value).subscribe((res)=>{
       console.log(res);
-      swal('Updated!', 'Product record has been Updated  Successfully!', 'success');
       this.router.navigate(['/products'])
     })
   }

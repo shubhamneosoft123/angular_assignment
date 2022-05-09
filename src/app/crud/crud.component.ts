@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import swal from 'sweetalert';
 
 @Component({
   selector: 'app-crud',
@@ -36,24 +35,15 @@ export class CrudComponent implements OnInit {
   //Submit form
   submitForm() {
     this.studArray.push(this.studentForm.value);
-    swal('Addedd!', 'Student data has been Added Successfully!', 'success');
     console.log(this.studentDetails);
     this.studentForm.reset();
   }
 
   // delete record
   deleteStudent(i: any) {
-    swal({
-      title: 'Are you sure?',
-      text: 'Are you sure that you want to delete student record?',
-      icon: 'warning',
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
+   
         this.studArray.splice(i, 1);
-        swal('Deleted!', 'Student data has been deleted!', 'success');
-      }
-    });
+       
   }
 
   // edit student record
@@ -73,7 +63,6 @@ export class CrudComponent implements OnInit {
     this.isUpdate=false;
     this.studArray.splice(this.upadateIndex,1);
     this.studArray.splice(this.upadateIndex,0,this.studentForm.value);
-    swal('Updated!', 'Student record has been Updated  Successfully!', 'success');
     this.studentForm.reset();
   }
 }
